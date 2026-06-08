@@ -4,3 +4,4 @@
 <img width="1024" height="768" alt="Beige and Pink Modern Business Process Flowchart Diagram (2)" src="https://github.com/user-attachments/assets/c1fdf1fb-4c92-4a6a-8d19-c2bc79dc63ec" />
 utilizar: https://www.tinkercad.com/ para alocar o codigo.
 <img width="1254" height="1254" alt="41e2ac84-652a-4433-9c1d-48714af833fb" src="https://github.com/user-attachments/assets/55ea729e-6ee1-4f0c-8dd8-475089298c30" />
+[White Playful Education Group Project Presentation.pdf](https://github.com/user-attachments/files/28728311/White.Playful.Education.Group.Project.Presentation.pdf)
