@@ -1,56 +1,90 @@
-#include <LiquidCrystal_I2C.h> //Biblioteca LCD_I2C
-#include <Wire.h>              //Biblioteca auxiliar
+#include <LiquidCrystal_I2C.h> // Biblioteca para controlar o display LCD com módulo I2C
+#include <Wire.h>              // Biblioteca para comunicação I2C
 
-//Pinos do LED RGB
-int Red = 3;     //Pino vermelho
+// =======================
+// Definição dos pinos
+// =======================
 
-//Sensor de ruído LM393
+// Pino onde o LED vermelho está conectado
+int Red = 3;
+
+// Pino onde o sensor de ruído está conectado
 int sensor = 2;
 
-//Instanciando o LCD I2C
+// Cria um objeto LCD no endereço I2C 0x27
+// Display com 16 colunas e 2 linhas
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 void setup() {
 
-  Serial.begin(9600); //Iniciando a comunicação serial
+  // Inicializa a comunicação serial em 9600 bps
+  Serial.begin(9600);
 
-  //Configuração dos LEDs
+  // Configura o pino do LED como saída
   pinMode(Red, OUTPUT);
 
-  //Configuração do sensor
+  // Configura o pino do sensor como entrada
   pinMode(sensor, INPUT);
 
-  //Iniciando o LCD
+  // Inicializa o display LCD
   lcd.init();
+
+  // Liga a iluminação de fundo do LCD
   lcd.backlight();
+
+  // Limpa qualquer informação existente no display
   lcd.clear();
 }
 
 void loop() {
 
+  // Lê o estado digital do sensor
+  // Retorna HIGH (1) ou LOW (0)
   int leitura = digitalRead(sensor);
 
-  //Se detectar som/movimento
+  // Se o sensor detectar ruído
+  // O operador ! inverte o valor:
+  // LOW vira TRUE e HIGH vira FALSE
   if (!leitura) {
+
+    // Acende o LED vermelho
     digitalWrite(Red, HIGH);
-  
-    //Mensagem no LCD
+
+    // Posiciona o cursor na coluna 4, linha 0
     lcd.setCursor(4, 0);
+
+    // Exibe a mensagem "Alerta!"
     lcd.print("Alerta!");
+
+    // Aguarda 5 segundos
     delay(5000);
+
+    // Posiciona o cursor na coluna 4, linha 1
     lcd.setCursor(4, 1);
+
+    // Exibe a mensagem "Defeito!"
     lcd.print("Defeito!");
 
+    // Aguarda 15 segundos
     delay(15000);
 
-    //Apaga LCD e LED
+    // Limpa o display após o alerta
     lcd.clear();
-    } else {
-    //LED verde ligado (normal)
+
+  } else {
+
+    // Se não houver ruído detectado
+
+    // Apaga o LED vermelho
     digitalWrite(Red, LOW);
 
+    // Posiciona o cursor no início da primeira linha
     lcd.setCursor(0, 0);
+
+    // Mostra mensagem de funcionamento normal
     lcd.print("TUDO OK!");
+
+    // Limpa imediatamente o display
     lcd.clear();
   }
 }
