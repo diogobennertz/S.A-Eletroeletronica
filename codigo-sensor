@@ -1,10 +1,6 @@
 #include <LiquidCrystal_I2C.h> // Biblioteca para controlar o display LCD com módulo I2C
 #include <Wire.h>              // Biblioteca para comunicação I2C
 
-// =======================
-// Definição dos pinos
-// =======================
-
 // Pino onde o LED vermelho está conectado
 int Red = 3;
 
