@@ -3,7 +3,6 @@
 
 //Pinos do LED RGB
 int Red = 3;     //Pino vermelho
-int Green = 4;   //Pino verde
 
 //Sensor de ruído LM393
 int sensor = 2;
@@ -17,7 +16,6 @@ void setup() {
 
   //Configuração dos LEDs
   pinMode(Red, OUTPUT);
-  pinMode(Green, OUTPUT);
 
   //Configuração do sensor
   pinMode(sensor, INPUT);
@@ -35,25 +33,24 @@ void loop() {
   //Se detectar som/movimento
   if (!leitura) {
     digitalWrite(Red, HIGH);
-    digitalWrite(Green, LOW);
   
     //Mensagem no LCD
     lcd.setCursor(4, 0);
     lcd.print("Alerta!");
-
+    delay(5000);
     lcd.setCursor(4, 1);
     lcd.print("Defeito!");
 
-    delay(400);
+    delay(15000);
 
     //Apaga LCD e LED
     lcd.clear();
     } else {
     //LED verde ligado (normal)
     digitalWrite(Red, LOW);
-    digitalWrite(Green, HIGH);
 
     lcd.setCursor(0, 0);
-    lcd.print("Sistema OK");
+    lcd.print("TUDO OK!");
+    lcd.clear();
   }
 }
