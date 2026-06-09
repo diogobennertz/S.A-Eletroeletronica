@@ -27,28 +27,7 @@ Detectar possíveis falhas mecânicas em impressoras 3D por meio da análise de 
 
 ## ⚙️ Funcionamento
 
-O sensor de ruído monitora continuamente o ambiente próximo à impressora.
-
-### Fluxo do Sistema
-
-```text
-Sensor detecta ruído
-        │
-        ├── Sinal normal
-        │      ├── LED apagado
-        │      └── LCD exibe:
-        │          "TUDO OK!"
-        │
-        └── Sinal anômalo
-               ├── LED vermelho acende
-               ├── LCD exibe:
-               │     "ALERTA!"
-               │      por 5 segundos
-               │
-               └── LCD exibe:
-                     "DEFEITO!"
-                      por 15 segundos
-```
+<img width="1024" height="768" alt="Beige and Pink Modern Business Process Flowchart Diagram (2)" src="https://github.com/user-attachments/assets/c1fdf1fb-4c92-4a6a-8d19-c2bc79dc63ec" />
 
 Após o retorno ao padrão normal de operação, os alertas são removidos automaticamente.
 
@@ -175,7 +154,7 @@ Exemplo:
 
 Projeto desenvolvido para fins acadêmicos e educacionais.
 
-<img width="1024" height="768" alt="Beige and Pink Modern Business Process Flowchart Diagram (2)" src="https://github.com/user-attachments/assets/c1fdf1fb-4c92-4a6a-8d19-c2bc79dc63ec" />
+
 <img width="1254" height="1254" alt="41e2ac84-652a-4433-9c1d-48714af833fb" src="https://github.com/user-attachments/assets/55ea729e-6ee1-4f0c-8dd8-475089298c30" />
 
 <img width="4000" height="2250" alt="White Playful Education Group Project Presentation-2" src="https://github.com/user-attachments/assets/2322db75-d710-4b9e-80de-54c9f50ac01c" />
