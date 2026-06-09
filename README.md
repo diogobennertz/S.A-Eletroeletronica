@@ -1,34 +1,180 @@
 # S.A-Eletroeletronica
- • Sistema 8 - Monitoramento de ruído:          D
- Noisy
-Monitoramento preditivo de impressoras 3D via análise de ruído com Arduino.
-Sobre o projeto
-Impressoras 3D frequentemente apresentam falhas mecânicas que se manifestam sonoramente antes de causar danos visíveis. O Noisy monitora o áudio da impressora em tempo real e emite um alerta quando detecta um padrão fora do normal, permitindo intervenção antes que a impressão seja comprometida.
-Funcionamento
-O sensor de ruído lê o sinal digital do ambiente e compara com o limiar de operação normal. Em caso de anomalia, o sistema acende o LED vermelho e exibe mensagens de alerta no LCD. Voltando ao normal, o alerta é limpo automaticamente.
+ • Sistema 8 - Monitoramento de ruído:         # 🔊 Noisy - Monitoramento Inteligente de Ruído para Impressoras 3D
+
+> Monitoramento preditivo de impressoras 3D através da análise de ruído utilizando Arduino.
+
+![Arduino](https://img.shields.io/badge/Arduino-Uno-00979D?style=for-the-badge\&logo=arduino)
+![Status](https://img.shields.io/badge/Status-Funcional-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-Educacional-blue?style=for-the-badge)
+
+---
+
+## 📖 Sobre o Projeto
+
+Impressoras 3D frequentemente apresentam falhas mecânicas antes mesmo que o problema seja visível. Em muitos casos, essas falhas podem ser percebidas através de alterações no som emitido durante a impressão.
+
+O **Noisy** foi desenvolvido para atuar como um sistema de monitoramento preventivo, analisando o ruído produzido pela impressora em tempo real.
+
+Quando um padrão sonoro anormal é detectado, o sistema gera alertas visuais e informa o operador através de um display LCD, permitindo uma intervenção rápida antes que a peça impressa seja comprometida.
+
+---
+
+## 🎯 Objetivo
+
+Detectar possíveis falhas mecânicas em impressoras 3D por meio da análise de ruído ambiente, reduzindo desperdícios de material, tempo e manutenção corretiva.
+
+---
+
+## ⚙️ Funcionamento
+
+O sensor de ruído monitora continuamente o ambiente próximo à impressora.
+
+### Fluxo do Sistema
+
+```text
 Sensor detecta ruído
         │
-        ├── Sinal anômalo → LED acende + LCD exibe "Alerta!" por 5s, depois "Defeito!" por 15s
+        ├── Sinal normal
+        │      ├── LED apagado
+        │      └── LCD exibe:
+        │          "TUDO OK!"
         │
-        └── Sinal normal  → LED apagado + LCD exibe "TUDO OK!"
-Hardware
-ComponenteConexãoArduino Uno—Sensor de ruídoPino digital 2LED vermelhoPino digital 3Resistor 220 ΩEm série com o LEDDisplay LCD 16x2 (I2C)Endereço 0x27 via SDA/SCLProtoboard—
-Dependências
-Instale via Sketch > Incluir Biblioteca > Gerenciar Bibliotecas na Arduino IDE:
+        └── Sinal anômalo
+               ├── LED vermelho acende
+               ├── LCD exibe:
+               │     "ALERTA!"
+               │      por 5 segundos
+               │
+               └── LCD exibe:
+                     "DEFEITO!"
+                      por 15 segundos
+```
 
-LiquidCrystal_I2C
-Wire (inclusa por padrão)
+Após o retorno ao padrão normal de operação, os alertas são removidos automaticamente.
 
-Como usar
+---
 
-Monte o circuito conforme o diagrama em docs/esquema.png
-Abra src/noisy.ino na Arduino IDE
-Faça o upload para a placa
-Posicione o sensor próximo à impressora — o display confirma quando o sistema está ativo
+## 🛠️ Hardware Utilizado
 
+| Componente           | Conexão                 |
+| -------------------- | ----------------------- |
+| Arduino Uno          | Controlador principal   |
+| Sensor de Ruído      | Pino Digital 2          |
+| LED Vermelho         | Pino Digital 3          |
+| Resistor 220 Ω       | Em série com o LED      |
+| Display LCD 16x2 I2C | Endereço 0x27 (SDA/SCL) |
+| Protoboard           | Montagem do circuito    |
 
-Desenvolvido por
-Diogo Faqueti Bennertz, Eloiza Scariotti Marcelino, Ana Clara Carvalho, Pedro Hoffmann.
+---
+
+## 🔌 Esquema de Ligação
+
+Consulte o diagrama disponível em:
+
+```text
+docs/esquema.png
+```
+
+---
+
+## 📚 Bibliotecas Necessárias
+
+Instale as seguintes bibliotecas através da Arduino IDE:
+
+```text
+Sketch
+ └── Incluir Biblioteca
+      └── Gerenciar Bibliotecas
+```
+
+Bibliotecas utilizadas:
+
+* LiquidCrystal_I2C
+* Wire (já inclusa na IDE)
+
+---
+
+## 🚀 Como Utilizar
+
+### 1. Monte o circuito
+
+Siga o esquema presente em:
+
+```text
+docs/esquema.png
+```
+
+### 2. Abra o projeto
+
+```text
+src/noisy.ino
+```
+
+na Arduino IDE.
+
+### 3. Faça o upload
+
+Conecte o Arduino e envie o código para a placa.
+
+### 4. Posicione o sensor
+
+Instale o sensor próximo à impressora 3D para capturar os sons produzidos durante a impressão.
+
+### 5. Monitore
+
+O display indicará o estado atual do sistema:
+
+✅ TUDO OK!
+
+ou
+
+⚠️ ALERTA!
+
+🚨 DEFEITO!
+
+---
+
+## 📸 Demonstração
+
+Adicione imagens do projeto na pasta:
+
+```text
+docs/images/
+```
+
+Exemplo:
+
+```markdown
+![Montagem](docs/images/montagem.jpg)
+
+![Sistema em funcionamento](docs/images/demo.jpg)
+```
+
+---
+
+## 💡 Aplicações
+
+* Monitoramento preventivo de impressoras 3D
+* Detecção de desgaste mecânico
+* Projetos de manutenção preditiva
+* Sistemas embarcados com Arduino
+* Automação industrial educacional
+
+---
+
+## 👨‍💻 Equipe de Desenvolvimento
+
+* Diogo Faqueti Bennertz
+* Eloiza Scariotti Marcelino
+* Ana Clara Carvalho
+* Pedro Hoffmann
+
+---
+
+## 📄 Licença
+
+Projeto desenvolvido para fins acadêmicos e educacionais.
+
 <img width="1024" height="768" alt="Beige and Pink Modern Business Process Flowchart Diagram (2)" src="https://github.com/user-attachments/assets/c1fdf1fb-4c92-4a6a-8d19-c2bc79dc63ec" />
 <img width="1254" height="1254" alt="41e2ac84-652a-4433-9c1d-48714af833fb" src="https://github.com/user-attachments/assets/55ea729e-6ee1-4f0c-8dd8-475089298c30" />
 
