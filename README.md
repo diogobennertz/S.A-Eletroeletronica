@@ -5,7 +5,7 @@
 
 ![Arduino](https://img.shields.io/badge/Arduino-Uno-00979D?style=for-the-badge\&logo=arduino)
 ![Status](https://img.shields.io/badge/Status-Funcional-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-Educacional-blue?style=for-the-badge)
+![Licença](https://img.shields.io/badge/License-Educacional-blue?style=for-the-badge)
 
 ---
 
