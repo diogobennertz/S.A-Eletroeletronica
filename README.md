@@ -44,74 +44,10 @@ Após o retorno ao padrão normal de operação, os alertas são removidos autom
 | Display LCD 16x2 I2C | Endereço 0x27 (SDA/SCL) |
 | Protoboard           | Montagem do circuito    |
 
----
-
-## 🔌 Esquema de Ligação
-
-Consulte o diagrama disponível em:
-
-```text
-docs/esquema.png
-```
-
----
-
-## 📚 Bibliotecas Necessárias
-
-Instale as seguintes bibliotecas através da Arduino IDE:
-
-```text
-Sketch
- └── Incluir Biblioteca
-      └── Gerenciar Bibliotecas
-```
-
 Bibliotecas utilizadas:
 
 * LiquidCrystal_I2C
 * Wire (já inclusa na IDE)
-
----
-
-## 🚀 Como Utilizar
-
-### 1. Monte o circuito
-
-Siga o esquema presente em:
-
-```text
-docs/esquema.png
-```
-
-### 2. Abra o projeto
-
-```text
-src/noisy.ino
-```
-
-na Arduino IDE.
-
-### 3. Faça o upload
-
-Conecte o Arduino e envie o código para a placa.
-
-### 4. Posicione o sensor
-
-Instale o sensor próximo à impressora 3D para capturar os sons produzidos durante a impressão.
-
-### 5. Monitore
-
-O display indicará o estado atual do sistema:
-
-✅ TUDO OK!
-
-ou
-
-⚠️ ALERTA!
-
-🚨 DEFEITO!
-
----
 
 ## 📸 Demonstração
 
