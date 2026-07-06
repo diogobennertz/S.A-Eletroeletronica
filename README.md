@@ -81,7 +81,6 @@ Exemplo:
 
 * Diogo Faqueti Bennertz
 * Eloiza Scariotti Marcelino
-* Ana Clara Carvalho
 * Pedro Hoffmann
 
 ---
