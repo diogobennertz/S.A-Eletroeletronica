@@ -51,19 +51,12 @@ Bibliotecas utilizadas:
 
 ## 📸 Demonstração
 
-Adicione imagens do projeto na pasta:
+<img width="3840" height="2160" alt="unnamed" src="https://github.com/user-attachments/assets/fc37efa6-c2a4-4d09-bd88-513ff85f57e0" />
 
-```text
-docs/images/
-```
+<img width="2160" height="3840" alt="unnamed (1)" src="https://github.com/user-attachments/assets/1c6cfbfc-fd48-4fd8-8783-511494fd68d8" />
 
-Exemplo:
+<img width="3520" height="1980" alt="unnamed (2)" src="https://github.com/user-attachments/assets/2671310f-28af-4737-870f-2071231e46b3" />
 
-```markdown
-![Montagem](docs/images/montagem.jpg)
-
-![Sistema em funcionamento](docs/images/demo.jpg)
-```
 
 ---
 
